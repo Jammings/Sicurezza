@@ -35,12 +35,12 @@ const Login = () => {
       {isLoading && <h2>Logeando usuario...</h2>}
       {!isLoading && <form onSubmit={submit}>
         <label>
-          <p>Email</p>
-          <input type="email" name="email" value={form.email} onChange={changeInput} required />
+          <p className="imput-p">Email</p>
+          <input className="form-input" type="email" name="email" value={form.email} onChange={changeInput} required />
         </label>
         <label>
           <p>Password</p>
-          <input
+          <input className="form-input"
             type="password"
             name="password"
             value={form.password}
