@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Ajustes() {
+function Settings() {
   return (
     <div>
-      AJUSTES
+      Settings
     </div>
   )
 }
 
-export default Ajustes
+export default Settings
