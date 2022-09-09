@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const roomSchema = new Schema(
   {
     name: { type: String, required: true },
     // description: { type: String, required: true },
@@ -14,6 +14,6 @@ const userSchema = new Schema(
   }
 );
 
-const Room = mongoose.model('Room', userSchema);
+const Room = mongoose.model('Room', roomSchema);
 
 module.exports = Room;
