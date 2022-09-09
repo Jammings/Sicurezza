@@ -1,12 +1,12 @@
 .navbar {
   display: flex;
   flex-flow: column;
-  background-color: white;
   padding: 20px;
   justify-content: center;
   align-items: center;
 
-  a, button {
+  a,
+  button {
     background-color: beige;
     padding: 8px 10px;
     margin-right: 20px;
