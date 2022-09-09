@@ -5,10 +5,11 @@ const MyAccount = () => {
     <>
       <h1>Mi cuenta</h1>
       <h2>Esta es tu cuenta </h2>
-      <Footer/>
+      <div>
+        <Footer />
+      </div>
     </>
-  )
-
+  );
 };
 
 export default MyAccount;

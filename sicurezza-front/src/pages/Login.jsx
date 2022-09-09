@@ -5,6 +5,7 @@ import { loginUser } from "../redux/auth/auth.actions";
 import { Link } from "react-router-dom";
 import "./Login.scss"
 import secuLogo from "../assets/sicurezza-logo.png";
+import signUp from "../assets/blueFootPc.svg";
 
 
 
@@ -77,6 +78,9 @@ const Login = () => {
       </div>
       {error && <h2 className="error">{error}</h2>}{" "}
       {/*si hay error nos lo muestra*/}
+      <div>
+   <img className="signUpImage" src={signUp} alt="city"/>
+   </div>
     </div>
   );
 };

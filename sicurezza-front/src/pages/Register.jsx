@@ -62,8 +62,9 @@ const Register = () => {
           />
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
-        <br />
+        <div>
         <button className="btn-access" type="submit">Registrarme</button>
+        </div>
       </form>
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
     <div>
