@@ -12,8 +12,11 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import MyAccount from "./pages/MyAccount";
 import AuthRoute from "./components/AuthRoute";
-
 import "./App.scss";
+import Inicio from "./pages/Inicio";
+import Dispositivos from "./pages/Dispositivos";
+import Ajustes from "./pages/Ajustes";
+import Salon from "./pages/Salon";
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
@@ -38,6 +41,10 @@ function App() {
           <Route path="/my-account" element={
             <AuthRoute component={<MyAccount />} />}
           />
+          <Route path="/inicio" element={<Inicio />} />
+          <Route path="/dispositivos" element={<Dispositivos />} />
+          <Route path="/ajustes" element={<Ajustes />} />
+          <Route path="/salon" element={<Salon />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
