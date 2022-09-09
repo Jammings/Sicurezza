@@ -7,6 +7,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const mainRoutes = require('./src/api/main/main.routes');
 const userRoutes = require('./src/api/users/user.routes');
+const roomRoutes = require('./src/api/rooms/room.routes');
 const db = require('./src/utils/database/db');
 dotenv.config();
 db.connect();
@@ -32,7 +33,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   cookie: {
-    maxAge: 30 * 1000,
+    maxAge: 120 * 60 * 1000,
   },
   store: MongoStore.create({ mongoUrl: db.DB_URL })
 }));
@@ -42,6 +43,7 @@ app.use(passport.session());
 
 app.use('/', mainRoutes);
 app.use('/users', userRoutes);
+app.use('/rooms', roomRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running in http://localhost:${PORT}`);

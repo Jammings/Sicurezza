@@ -9,6 +9,7 @@ const userSchema = new Schema(
     name: { type: String, required: true },
     age: { type: Number },
     phone: { type: Number },
+    room: [{type:Schema.Types.ObjectId, ref: 'Room'}]
   },
   {
     timestamps: true,
