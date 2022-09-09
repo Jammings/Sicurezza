@@ -11,7 +11,7 @@ const db = require('./src/utils/database/db');
 dotenv.config();
 db.connect();
 
-const PORT = 4000;
+const PORT = 4500;
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors({ origin: '*', credentials: true }))
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 
 app.use(session({
   secret: 'ASD12sasdjkq!woiej213_SAd!asdljiasjd',
