@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../redux/auth/auth.actions";
 import "./Register.scss";
-import signUp from "../assets/signUp.png";
+import signUp from "../assets/blueFootPc.svg";
 
 const INITIAL_STATE = {
   email: "",
@@ -66,7 +66,10 @@ const Register = () => {
         <button className="btn-access" type="submit">Registrarme</button>
       </form>
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
-    </div>
+    <div>
+   <img className="signUpImage" src={signUp} alt="city"/>
+   </div>
+    </div> 
   );
   
 };
