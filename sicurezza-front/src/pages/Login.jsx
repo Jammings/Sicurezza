@@ -20,7 +20,7 @@ const Login = () => {
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(loginUser(form, navigate)); //lanzamos la función loginUser que recibimos por props y que conecta con nuestra API, tratamos de loguear al usuario
+    dispatch(loginUser(form, navigate)); // lanzamos la función loginUser que recibimos por props y que conecta con nuestra API, tratamos de loguear al usuario
   };
 
   const changeInput = (ev) => {
