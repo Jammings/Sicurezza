@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Salon() {
+function Devices() {
   return (
     <div>
-      Salon
+      Devices 
     </div>
   )
 }
 
-export default Salon
+export default Devices

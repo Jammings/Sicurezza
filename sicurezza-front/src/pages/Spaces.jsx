@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Inicio() {
+function Spaces() {
   return (
     <div>
-      INICIO
+      Spaces
     </div>
   )
 }
 
-export default Inicio
+export default Spaces
