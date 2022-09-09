@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../redux/auth/auth.actions";
+import "./Register.scss";
+import signUp from "../assets/signUp.png";
 
 const INITIAL_STATE = {
   email: "",
@@ -37,19 +39,19 @@ const Register = () => {
 
   return (
     <div>
-      <h1>Register Page</h1>
+      <h1 className="login-title">Register</h1>
       <form onSubmit={submit}>
         <label>
-          <p>Nombre</p>
-          <input type="text" name="name" value={form.name} onChange={changeInput} onInvalid={(ev) => setCustomMessage(ev)} required/>
+          <p className="imput-up-text">Nombre</p>
+          <input className="form-input" type="text" name="name" value={form.name} onChange={changeInput} onInvalid={(ev) => setCustomMessage(ev)} required/>
         </label>
         <label>
-          <p>Email</p>
-          <input type="email" name="email" value={form.email} onChange={changeInput} required />
+          <p className="imput-up-text">Email</p>
+          <input className="form-input" type="email" name="email" value={form.email} onChange={changeInput} required />
         </label>
         <label>
-          <p>Password</p>
-          <input
+          <p className="imput-up-text">Password</p>
+          <input className="form-input"
             type="password"
             name="password"
             value={form.password}
@@ -61,11 +63,11 @@ const Register = () => {
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
         <br />
-        <button type="submit">Registrarme</button>
+        <button className="btn-access" type="submit">Registrarme</button>
       </form>
       {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
     </div>
   );
+  
 };
-
 export default Register;
