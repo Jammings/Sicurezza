@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
-import './Login.scss';
+import "./Login.scss";
 
 const INITIAL_STATE = {
   email: "",
@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { error, isLoading } = useSelector(state => state.auth);
+  const { error, isLoading } = useSelector((state) => state.auth);
   const [form, setForm] = useState(INITIAL_STATE);
 
   const submit = (ev) => {
@@ -33,28 +33,39 @@ const Login = () => {
     <div>
       <h1>Login Page</h1>
       {isLoading && <h2>Logeando usuario...</h2>}
-      {!isLoading && <form onSubmit={submit}>
-        <label>
-          <p className="imput-p">Email</p>
-          <input className="form-input" type="email" name="email" value={form.email} onChange={changeInput} required />
-        </label>
-        <label>
-          <p>Password</p>
-          <input className="form-input"
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={changeInput}
-            required
-            pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
-            title="La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número"
-          />
-        </label>
+      {!isLoading && (
+        <form onSubmit={submit}>
+          <label>
+            <p className="imput-p">Email</p>
+            <input
+              className="form-input"
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={changeInput}
+              required
+            />
+          </label>
+          <label>
+            <p>Password</p>
+            <input
+              className="form-input"
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={changeInput}
+              required
+              pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+              title="La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número"
+            />
+          </label>
 
-        <br />
-        <button type="submit">Acceder</button>
-      </form>}
-      {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
+          <br />
+          <button type="submit">Acceder</button>
+        </form>
+      )}
+      {error && <h2 className="error">{error}</h2>}{" "}
+      {/*si hay error nos lo muestra*/}
     </div>
   );
 };
