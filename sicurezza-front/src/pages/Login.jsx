@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <div>
       <h1 className="login-title">Bienvenido a</h1>
-      <img src={secuLogo} width="350px"/>
+      <img src={secuLogo} width="350px" alt="sicurezza logo"/>
       {isLoading && <h2>Logeando usuario...</h2>}
       {!isLoading && (
         <form onSubmit={submit}>
@@ -65,7 +65,7 @@ const Login = () => {
           </label>
 
           <br />
-          <button type="submit">Acceder</button>
+          <button className="btn-access" type="submit">Acceder</button>
         </form>
       )}
       {error && <h2 className="error">{error}</h2>}{" "}
