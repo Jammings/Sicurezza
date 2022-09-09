@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
-import "./Login.scss";
+import { Link } from "react-router-dom";
+import "./Login.scss"
 import secuLogo from "../assets/sicurezza-logo.png";
 
 
@@ -40,7 +41,7 @@ const Login = () => {
       {!isLoading && (
         <form onSubmit={submit}>
           <label>
-            <p className="imput-p">Email</p>
+            <p className="imput-up-text">Email</p>
             <input
               className="form-input"
               type="email"
@@ -51,7 +52,7 @@ const Login = () => {
             />
           </label>
           <label>
-            <p className="imput-p">Password</p>
+            <p className="imput-up-text">Password</p>
             <input
               className="form-input"
               type="password"
@@ -64,10 +65,16 @@ const Login = () => {
             />
           </label>
 
-          <br />
+          <div>
           <button className="btn-access" type="submit">Acceder</button>
+          </div>
         </form>
-      )}
+      )}          
+      <div>
+      <Link to="/register">
+      <button className="btn-access">Register</button>
+      </Link>
+      </div>
       {error && <h2 className="error">{error}</h2>}{" "}
       {/*si hay error nos lo muestra*/}
     </div>
