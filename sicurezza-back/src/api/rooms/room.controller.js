@@ -36,7 +36,8 @@ const putRoom = async (req,res,next) =>{
         const room= new Room(req.body);
         room._id=id;
         const updateRoom = await Room.findByIdAndUpdate(id, room);
-        return next(updateRoom);
+        return res.status(201).json(room);
+
     }catch(error){
         return next(error);
     }
