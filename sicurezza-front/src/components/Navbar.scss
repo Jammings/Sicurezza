@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../../src/pages/fonts/Poppins-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
 .navbar {
   display: flex;
   flex-direction: column;
@@ -5,7 +12,9 @@
   padding: 20px;
   justify-content: space-between;
   align-items: flex-start;
+  font-family: Poppins;
   
+
 
   a,
   button {
