@@ -10,17 +10,54 @@
   flex-direction: column;
   flex-flow: column;
   padding: 20px;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: stretch;
   font-family: Poppins;
-  
 
+  .active {
+    background-color: #32a8ea;
+    color: white;
+  }
+  .logo {
+    width: 176px;
+    height: 46px;
+    background-image: url("../../public/icons/sicurezzalogocopy.png");
+    background-size: contain;
+  }
 
-  a,
-  button {
-    background-color: beige;
+  .logout {
     padding: 8px 10px;
     margin-right: 20px;
     border-radius: 5px;
+    text-align: center;
+    border-radius: 8px;  
+    color: #9197b3;
+    text-decoration: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+
+  }
+  a {
+    padding: 8px 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+    text-align: center;
+    border-radius: 8px;
+    color: #9197b3;
+    text-decoration: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    background-repeat: no-repeat;
   }
 }
+
+.navbar:nth-child(3) {background-image: url("../../public/icons/user.svg");}

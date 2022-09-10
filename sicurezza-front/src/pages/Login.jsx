@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
+import "./Login.scss";
 import { Link } from "react-router-dom";
 import "./Login.scss"
 import secuLogo from "../assets/sicurezza-logo.png";
 import signUp from "../assets/blueFootPc.svg";
-
 
 
 const INITIAL_STATE = {
@@ -65,7 +65,6 @@ const Login = () => {
               title="La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número"
             />
           </label>
-
           <div>
           <button className="btn-access" type="submit">Acceder</button>
           </div>
