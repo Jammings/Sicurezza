@@ -7,7 +7,9 @@ import arrow from "../assets/arrow.svg"; //añadir iconos
 import icdevice from "../assets/devices.svg";
 import whitedevice from "../assets/IconsWhite/devicesWhite.svg"; //añadido icono device2 blanco
 import icconfig from "../assets/config.svg";
+import whiteconfig from "..//assets/IconsWhite/configWhite.svg";
 import icspaces from "../assets/spaces.svg";
+import whitespaces from "../assets/IconsWhite/spacesWhite.svg";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -26,7 +28,7 @@ const Navbar = () => {
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )} */} {/**ocultado Home en el login  */}
-        {!user && (
+        {/* {!user && (
           <Link
             className={location.pathname === "/login" ? "active" : ""}
             to="/login"
@@ -34,7 +36,7 @@ const Navbar = () => {
             Login
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
-        )}{" "}
+        )}{" "} */}
         {/*si no existe usuario muestra el link de login*/}
         {/* {!user && ( 
           <Link
@@ -60,7 +62,8 @@ const Navbar = () => {
             className={location.pathname === "/spaces" ? "active" : ""}
             to="/spaces"
           >
-            <img className="activeicons" src={icspaces} alt="inicio" />{" "}
+            <img className="activeicons" src={icspaces} alt="inicio" />
+            <img className="activeicons" src={whitespaces} alt="inicio" />{" "}
             <span>Espacios</span>
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
@@ -81,9 +84,11 @@ const Navbar = () => {
             className={location.pathname === "/settings" ? "active" : ""}
             to="/settings"
           >
-            <img className="activeicons" src={icconfig} alt="inicio" />{" "}
+            <img className="activeicons" src={icconfig} alt="inicio" />
+            <img className="activeicons" src={whiteconfig} alt="inicio" />{" "}
             <span>Ajustes</span>
             <img className="activeicons" src={arrow} alt="fin" />
+            
           </Link>
         )}
         {user && (
