@@ -19,7 +19,7 @@ const Navbar = () => {
       {!user && (
         <Link className={location.pathname === "/" ? "active" : ""} to="/">
           {/* <span>&nbsp;</span> Home */}
-          <img src={image} alt="inicio" /> <span>Home</span>
+          <img className="activeicons" src={image} alt="inicio" /> <span>Home</span>
         </Link>
       )}
       {!user && (
