@@ -45,6 +45,7 @@ const Navbar = () => {
           className={location.pathname === "/start" ? "active" : ""}
           to="/start"
         >
+        <img src={image} alt="inicio" />  
           Inicio
         </Link>
       )}
