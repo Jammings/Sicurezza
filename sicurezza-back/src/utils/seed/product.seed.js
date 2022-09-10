@@ -23,13 +23,13 @@ const initialProducts = [
     },
     {
       name: 'Sensor de temperatura y humedad',
-      img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faltronics.cl%2Fimage%2Fcache%2Fcatalog%2Fproductos%2Felectronica%2Fsensores%2Fdht21%2Fdht21-3-500x500.png&f=1&nofb=1',
+      img: 'https://res.cloudinary.com/dulzlnv9t/image/upload/v1662818151/sicurezza/sensorTemp_fpjfr4.png',
       description: 'Detecta los grados Cº y humedad de la casa',
       type: 'Sensor',
     },
     {
       name: 'Sensor láser',
-      img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdnx.jumpseller.com%2Fmactornica%2Fimage%2F9798785%2Fresize%2F570%2F765%3F1628814789&f=1&nofb=1',
+      img: 'https://res.cloudinary.com/dulzlnv9t/image/upload/v1662817270/sicurezza/sensor-laser_eujk2b.png',
       description: 'Detecta movimiento discretamente',
       type: 'Sensor',
     },
