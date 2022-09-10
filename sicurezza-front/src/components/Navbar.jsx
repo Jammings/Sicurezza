@@ -10,6 +10,7 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
   console.log("pathname", location.pathname);
+  
   return ( true && ( 
     <div className="navbar">
       <div className="logo">
@@ -17,7 +18,8 @@ const Navbar = () => {
       </div>
       {!user && (
         <Link className={location.pathname === "/" ? "active" : ""} to="/">
-          Home
+          {/* <span>&nbsp;</span> Home */}
+          <img src={image} alt="inicio" /> <span>Home</span>
         </Link>
       )}
       {!user && (
