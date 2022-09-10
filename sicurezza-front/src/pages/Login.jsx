@@ -3,6 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
 import "./Login.scss";
+import { Link } from "react-router-dom";
+import "./Login.scss"
+import secuLogo from "../assets/sicurezza-logo.png";
+import signUp from "../assets/blueFootPc.svg";
+
 
 const INITIAL_STATE = {
   email: "",
@@ -17,7 +22,7 @@ const Login = () => {
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(loginUser(form, navigate)); //lanzamos la función loginUser que recibimos por props y que conecta con nuestra API, tratamos de loguear al usuario
+    dispatch(loginUser(form, navigate)); // lanzamos la función loginUser que recibimos por props y que conecta con nuestra API, tratamos de loguear al usuario
   };
 
   const changeInput = (ev) => {
@@ -31,12 +36,13 @@ const Login = () => {
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1 className="login-title">Bienvenido a</h1>
+      <img src={secuLogo} width="350px" alt="sicurezza logo"/>
       {isLoading && <h2>Logeando usuario...</h2>}
       {!isLoading && (
         <form onSubmit={submit}>
           <label>
-            <p className="imput-p">Email</p>
+            <p className="imput-up-text">Email</p>
             <input
               className="form-input"
               type="email"
@@ -47,7 +53,7 @@ const Login = () => {
             />
           </label>
           <label>
-            <p>Password</p>
+            <p className="imput-up-text">Password</p>
             <input
               className="form-input"
               type="password"
@@ -59,13 +65,21 @@ const Login = () => {
               title="La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número"
             />
           </label>
-
-          <br />
-          <button type="submit">Acceder</button>
+          <div>
+          <button className="btn-access" type="submit">Acceder</button>
+          </div>
         </form>
-      )}
+      )}          
+      <div>
+      <Link to="/register">
+      <button className="btn-access">Register</button>
+      </Link>
+      </div>
       {error && <h2 className="error">{error}</h2>}{" "}
       {/*si hay error nos lo muestra*/}
+      <div>
+   <img className="signUpImage" src={signUp} alt="city"/>
+   </div>
     </div>
   );
 };
