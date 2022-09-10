@@ -14,7 +14,6 @@ const Navbar = () => {
       <div className="logo">
         
       </div>
-      
       {/*si no existe usuario muestra el link de register*/}
       {user && (
         <Link
