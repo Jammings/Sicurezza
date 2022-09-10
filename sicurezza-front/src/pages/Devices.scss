@@ -1,0 +1,58 @@
+.d-all {
+  padding-left: 100px;
+}
+.d-bocadillo {
+  background-color: white;
+  width: 90%;
+  justify-content: space-around;
+  border-radius: 40px;
+  margin-bottom: 75px;
+  display: flex;
+  img {
+    line-height: 1;
+  }
+}
+.d-text {
+  // float: center;
+  background-color: white;
+  width: 90%;
+  height: 600px;
+  border-radius: 30px;
+}
+.d-devices-father {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 65%;
+}
+.d-spaces{
+    margin-top: -10px;
+    line-height: 0.4;
+}
+
+.d-add {
+  margin-top: 25px;
+  img {
+    margin-bottom: -10px;
+  }
+}
+.d-delete {
+  margin-top: 25px;
+  img {
+    margin-bottom: -10px;
+  }
+}
+.d-config {
+  margin-top: 25px;
+  img {
+    margin-bottom: -10px;
+  }
+}
+.d-title {
+  width: 100%;
+  height: 100px;
+  padding-top: 30px;
+}
+.d-img{
+    padding-top: 26px;
+}
