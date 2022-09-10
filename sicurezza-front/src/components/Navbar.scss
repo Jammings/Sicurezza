@@ -13,9 +13,14 @@
   justify-content: flex-start;
   align-items: stretch;
   font-family: Poppins;
+  background-color: #ffff;
 
   .active {
     background-color: #32a8ea;
+    color: white;
+  }
+
+  .activeicons {
     color: white;
   }
   .logo {
