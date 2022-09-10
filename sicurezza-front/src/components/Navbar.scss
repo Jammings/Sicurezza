@@ -50,7 +50,7 @@
     text-align: center;
     border-radius: 8px;
     color: #9197b3;
-    text-decoration: none;
+    text-decoration:none;
     font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
@@ -60,19 +60,6 @@
     width: 251.63px;
     height: 41.32px;
 
-    span {
-      background-repeat: no-repeat;
-      width: 54px;
-      height: 36px;
-      margin-right: 10px;
-      padding-right: 40px;
-      background-image: url("../assets/user.svg"");
-    }
   }
 }
 
-.navbar:nth-child(2) > span {
-  background-image: url("../assets/user.svg"");
-}
-
- 
