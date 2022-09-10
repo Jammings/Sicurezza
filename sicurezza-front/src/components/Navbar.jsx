@@ -23,7 +23,7 @@ const Navbar = () => {
             {/* <span>&nbsp;</span> Home */}
             <img className="activeicons" src={image} alt="inicio" />{" "}
             <span>Home</span> {/* //añadir iconos */}
-            <img className="activeicons" src={arrow} alt="inicio" />
+            <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}
         {!user && (
@@ -32,6 +32,7 @@ const Navbar = () => {
             to="/login"
           >
             Login
+            <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}{" "}
         {/*si no existe usuario muestra el link de login*/}
@@ -41,6 +42,7 @@ const Navbar = () => {
             to="/register"
           >
             Register
+            <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}{" "}
         {/*si no existe usuario muestra el link de register*/}
@@ -59,7 +61,7 @@ const Navbar = () => {
           >
             <img className="activeicons" src={icspaces} alt="inicio" />{" "}
             <span>Espacios</span>
-            <img className="activeicons" src={arrow} alt="inicio" />
+            <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}
         {user && (
@@ -69,7 +71,7 @@ const Navbar = () => {
           >
             <img className="activeicons" src={icdevice} alt="inicio" />{" "}
             <span>Dispositivos</span>
-            <img className="activeicons" src={arrow} alt="inicio" />
+            <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}
         {user && (
@@ -79,7 +81,7 @@ const Navbar = () => {
           >
             <img className="activeicons" src={icconfig} alt="inicio" />{" "}
             <span>Ajustes</span>
-            <img className="activeicons" src={arrow} alt="inicio" />
+            <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}
         {user && (
@@ -87,7 +89,8 @@ const Navbar = () => {
             className={location.pathname === "/my-account" ? "active" : ""}
             to="/my-account"
           >
-            Mi Cuenta
+            <span>Mi Cuenta</span>
+            <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}
         {user && (
