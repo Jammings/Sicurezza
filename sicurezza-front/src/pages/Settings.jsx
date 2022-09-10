@@ -1,10 +1,11 @@
 import React from "react";
 import Footer from "../components/Footer";
+import "./Settings.scss"
 
 function Settings() {
   return (
     <>
-      <div>Settings</div>
+      <div className="s-div">Settings</div>
       <div>
         <Footer />
       </div>
