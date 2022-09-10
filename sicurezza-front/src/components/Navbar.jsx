@@ -5,6 +5,7 @@ import "./Navbar.scss";
 import image from "../assets/user.svg";
 import arrow from "../assets/arrow.svg"; //añadir iconos
 import icdevice from "../assets/devices.svg";
+import icdevice2 from "../assets/devices2.svg"; //añadido icono device2 blanco
 import icconfig from "../assets/config.svg";
 import icspaces from "../assets/spaces.svg";
 
@@ -18,14 +19,13 @@ const Navbar = () => {
     true && (
       <div className="navbar">
         <div className="logo"></div>
-        {!user && (
+        {/* {!user && ( // eliminado exclamacion
           <Link className={location.pathname === "/" ? "active" : ""} to="/">
-            {/* <span>&nbsp;</span> Home */}
             <img className="activeicons" src={image} alt="inicio" />{" "}
-            <span>Home</span> {/* //añadir iconos */}
+            <span>Home</span>
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
-        )}
+        )} */} {/**ocultado Home en el login  */}
         {!user && (
           <Link
             className={location.pathname === "/login" ? "active" : ""}
@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
         )}{" "}
         {/*si no existe usuario muestra el link de login*/}
-        {!user && (
+        {/* {!user && ( 
           <Link
             className={location.pathname === "/register" ? "active" : ""}
             to="/register"
@@ -44,7 +44,8 @@ const Navbar = () => {
             Register
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
-        )}{" "}
+        )}{" "} */}{" "}
+        {/* ocultado register */}
         {/*si no existe usuario muestra el link de register*/}
         {user && (
           <Link
@@ -69,7 +70,8 @@ const Navbar = () => {
             className={location.pathname === "/devices" ? "active" : ""}
             to="/devices"
           >
-            <img className="activeicons" src={icdevice} alt="inicio" />{" "}
+            <img className="activeicons" src={icdevice} alt="inicio" /> 
+            <img className="activeicons" src={icdevice2} alt="inicio" />{" "} {/** añadir icono blanco icono2*/}
             <span>Dispositivos</span>
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
