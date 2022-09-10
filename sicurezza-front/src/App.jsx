@@ -57,8 +57,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-
-      <Footer />
       {/* <button onClick={() => setShowScroll(!showScroll)}>Mostrar Scroll</button>
       {showScroll && <Scroll />} */}
     </div>

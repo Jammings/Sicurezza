@@ -7,7 +7,9 @@ router
   .post('/register', controller.registerPost)
   .post('/login', controller.loginPost)
   .post('/logout', controller.logoutPost)
-  .post('/test', controller.test);
+  .get('/check-session', controller.checkSessionGet)
+  .post('/test', controller.test)
+  .put('/:id', controller.putUser)
 
 
 module.exports = router;
