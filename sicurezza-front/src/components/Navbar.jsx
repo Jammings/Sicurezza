@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/auth/auth.actions";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
+import image from "../assets/user.svg";
 
 
 const Navbar = () => {
@@ -9,11 +10,35 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
   console.log("pathname", location.pathname);
+  
   return ( true && ( 
     <div className="navbar">
       <div className="logo">
         
       </div>
+      {!user && (
+        <Link className={location.pathname === "/" ? "active" : ""} to="/">
+          {/* <span>&nbsp;</span> Home */}
+          <img src={image} alt="inicio" /> <span>Home</span>
+        </Link>
+      )}
+      {!user && (
+        <Link
+          className={location.pathname === "/login" ? "active" : ""}
+          to="/login"
+        >
+          Login
+        </Link>
+      )}{" "}
+      {/*si no existe usuario muestra el link de login*/}
+      {!user && (
+        <Link
+          className={location.pathname === "/register" ? "active" : ""}
+          to="/register"
+        >
+          Register
+        </Link>
+      )}{" "}
       {/*si no existe usuario muestra el link de register*/}
       {user && (
         <Link
