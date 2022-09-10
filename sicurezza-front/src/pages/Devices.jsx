@@ -11,6 +11,7 @@ import "./Devices.scss";
 function Devices() {
   return (
     <>
+
       <div className="d-all">
         <div className="d-bocadillo">
           <div>
