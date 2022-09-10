@@ -14,28 +14,7 @@ const Navbar = () => {
       <div className="logo">
         
       </div>
-      {!user && (
-        <Link className={location.pathname === "/" ? "active" : ""} to="/">
-          Home
-        </Link>
-      )}
-      {!user && (
-        <Link
-          className={location.pathname === "/login" ? "active" : ""}
-          to="/login"
-        >
-          Login
-        </Link>
-      )}{" "}
-      {/*si no existe usuario muestra el link de login*/}
-      {!user && (
-        <Link
-          className={location.pathname === "/register" ? "active" : ""}
-          to="/register"
-        >
-          Register
-        </Link>
-      )}{" "}
+      
       {/*si no existe usuario muestra el link de register*/}
       {user && (
         <Link
