@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/auth/auth.actions";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
+import image from "../assets/user.svg";
 
 
 const Navbar = () => {
@@ -42,6 +43,7 @@ const Navbar = () => {
           className={location.pathname === "/start" ? "active" : ""}
           to="/start"
         >
+        <img src={image} alt="inicio" />  
           Inicio
         </Link>
       )}
