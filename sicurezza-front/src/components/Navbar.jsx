@@ -16,7 +16,7 @@ const Navbar = () => {
       </div>
       {!user && (
         <Link className={location.pathname === "/" ? "active" : ""} to="/">
-          Home
+          <span>&nbsp;</span>Home
         </Link>
       )}
       {!user && (
