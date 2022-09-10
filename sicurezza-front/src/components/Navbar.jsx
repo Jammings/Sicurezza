@@ -5,7 +5,7 @@ import "./Navbar.scss";
 import image from "../assets/user.svg";
 import arrow from "../assets/arrow.svg"; //añadir iconos
 import icdevice from "../assets/devices.svg";
-import icdevice2 from "../assets/devices2.svg"; //añadido icono device2 blanco
+import whitedevice from "../assets/IconsWhite/devicesWhite.svg"; //añadido icono device2 blanco
 import icconfig from "../assets/config.svg";
 import icspaces from "../assets/spaces.svg";
 
@@ -71,7 +71,7 @@ const Navbar = () => {
             to="/devices"
           >
             <img className="activeicons" src={icdevice} alt="inicio" /> 
-            <img className="activeicons" src={icdevice2} alt="inicio" />{" "} {/** añadir icono blanco icono2*/}
+            <img className="activeicons" src={whitedevice} alt="inicio" />{" "} {/** añadir icono blanco icono2*/}
             <span>Dispositivos</span>
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
