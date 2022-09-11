@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo');
 const mainRoutes = require('./src/api/main/main.routes');
 const userRoutes = require('./src/api/users/user.routes');
 const roomRoutes = require('./src/api/rooms/room.routes');
+const productRoutes = require('./src/api/products/product.routes');
 const db = require('./src/utils/database/db');
 dotenv.config();
 db.connect();
@@ -44,6 +45,7 @@ app.use(passport.session());
 app.use('/', mainRoutes);
 app.use('/users', userRoutes);
 app.use('/rooms', roomRoutes);
+app.use('/products', productRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running in http://localhost:${PORT}`);
