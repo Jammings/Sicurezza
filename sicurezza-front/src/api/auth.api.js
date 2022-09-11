@@ -23,6 +23,15 @@ export const login = async (user) => {
   }
 }
 
+export const product = async (device) => {
+  try {
+    const res = await axios.post(`${BASE_URL}/devices`, device, { withCredentials: true });
+    return res.data;
+  } catch(error) {
+    return error.response.data;
+  }
+}
+
 //lanza a la API la petición para desloguear el usuario
 export const logout = async (user) => {
   try {
