@@ -11,7 +11,7 @@ function Spaces() {
     <>
       <div>
         <Form/>
-        {user.room && user.room.map((room) => { return(<div>rooms</div>)})}
+        {user.room && user.room.map((room) => { return(<div>{room.name}</div>)})}
         {console.log(user.room)}
       </div>
     </>
