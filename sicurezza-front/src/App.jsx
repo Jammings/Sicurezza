@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { checkUser } from "./redux/auth/auth.actions";
 import { useNavigate } from "react-router-dom";
@@ -20,25 +20,19 @@ import Spaces from "./pages/Spaces";
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
+  const user = useSelector(state => state.auth.user);
   const dispatch = useDispatch();
-  const [showNavbar, setShowNavbar] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     //Intentar recuperar el usuario, si es que estamos logueados
-    dispatch(checkUser()).then((user) => {
-      console.log(user, "dispacher");
-      // setShowNavbar(!!user); //activar cuando no de error back
-      setShowNavbar(true); // borrar despues
-      if (!showNavbar) {
-        navigate("/login");
-      }
-    });
-  }, []);
+    dispatch(checkUser(navigate))
+     
+    }, [dispatch]);
 
   return (
     <div className="app">
       {/*Envía al navbar la función logoutUser que es la que desloguea el usuario, y también el usuario*/}
-      {showNavbar && <Navbar />}
+      {user && <Navbar />}
       <main className="content">
         <Routes>
           <Route path="/" element={<Home />} />
