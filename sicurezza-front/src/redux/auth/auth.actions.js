@@ -1,3 +1,4 @@
+import axios from "axios";
 import { checkSession, login, logout, register } from "../../api/auth.api";
 
 export const LOGIN_USER_START = "LOGIN_USER_START";
@@ -15,6 +16,10 @@ export const CHECK_SESSION_ERROR = "CHECK_SESSION_ERROR";
 export const LOGOUT_START = "LOGOUT_START";
 export const LOGOUT_OK = "LOGOUT_OK";
 export const LOGOUT_ERROR = "LOGOUT_ERROR";
+
+export const UPDATE_START = "UPDATE_START";
+export const UPDATE_OK = "UPDATE_OK";
+export const UPDATE_ERROR = "UPDATE_ERROR";
 
 export const loginUser = (user, navigate) => async (dispatch) => {
   try {
@@ -81,4 +86,15 @@ export const logoutUser = (navigate) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: LOGOUT_OK, payload: error });
   }
+};
+
+export const updateUser = (id, data) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_START });
+    const response = await axios.put(`http://localhost:4500/users/${id}`, data);
+    dispatch({ type: UPDATE_OK, payload: data });
+  } catch (error) {
+    dispatch({ type: UPDATE_ERROR, payload: error });
+  }
+  
 };
