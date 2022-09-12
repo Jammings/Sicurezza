@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 import "./Devices.scss";
 import CallDevices from "./CallDevices";
 
@@ -8,7 +7,6 @@ function Devices() {
     <>
       <div>
         <CallDevices />
-        <Footer />
       </div>
     </>
   );
