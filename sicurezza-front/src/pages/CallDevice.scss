@@ -1,8 +1,18 @@
-.cd-devices{
+.cd-devices-father{
     display: flex;
     flex-wrap: wrap;
+}
+
+.cd-devices{
+    // display: flex;
+    // flex-wrap: wrap;
+    height: 100%;
+    width: 30%;
+    padding-right: 10%;
+    padding-bottom: 50px;
     img{
-        width: 100px;
-        height: 250px;
+        width: 50%;
+        height: 50%;
     }
+    
 }

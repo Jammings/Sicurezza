@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./CallDevice.scss"
 
 const CallDevices = () => {
   const [devices, setDevices] = useState([]);
@@ -13,13 +14,13 @@ const CallDevices = () => {
 
   return (
     <>
-      <div>
+      <div className="cd-devices-father">
         {devices.map((device) => (
           <div className="cd-devices">
-            <h1> {device.name} </h1>
+            <h3> {device.name} </h3>
             <img src={device.img}/>
-            <h2>{device.description}</h2>
-            <h2>{device.type}</h2>
+            <h4>{device.description}</h4>
+            <h4>{device.type}</h4>
           </div>
         ))}
       </div>
