@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/auth/auth.actions";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
 import icinicio from "../assets/user.svg";
 import inicioWhite from "../assets/IconsWhite/userWhite.svg";
@@ -14,45 +15,24 @@ import whitespaces from "../assets/IconsWhite/spacesWhite.svg";
 import icmessage from "../assets/message.svg";
 import whitemessage from "../assets/IconsWhite/messageWhite.svg";
 
+const INITIAL_STATE = {
+  email: "",
+  password: "",
+};
+
 const Navbar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
+/*   const { error, isLoading } = useSelector((state) => state.navbar); */
   const location = useLocation();
+  const [users] = useState(INITIAL_STATE);
   console.log("pathname", location.pathname);
-
+  
   return (
-    true && (
+    users && (
       <div className="navbar">
         <div className="logo"></div>
-        {/* {!user && ( // eliminado exclamacion
-          <Link className={location.pathname === "/" ? "active" : ""} to="/">
-            <img className="activeicons" src={image} alt="inicio" />{" "}
-            <span>Home</span>
-            <img className="activeicons" src={arrow} alt="fin" />
-          </Link>
-        )} */}{" "}
-        {/**ocultado Home en el login  */}
-        {/* {!user && (
-          <Link
-            className={location.pathname === "/login" ? "active" : ""}
-            to="/login"
-          >
-            Login
-            <img className="activeicons" src={arrow} alt="fin" />
-          </Link>
-        )}{" "} */}
-        {/*si no existe usuario muestra el link de login*/}
-        {/* {!user && ( 
-          <Link
-            className={location.pathname === "/register" ? "active" : ""}
-            to="/register"
-          >
-            Register
-            <img className="activeicons" src={arrow} alt="fin" />
-          </Link>
-        )}{" "} */}{" "}
-        {/* ocultado register */}
-        {/*si no existe usuario muestra el link de register*/}
         {user && (
           <Link
             className={location.pathname === "/start" ? "active" : ""}
@@ -109,7 +89,7 @@ const Navbar = () => {
           </Link>
         )}
         {user && (
-          <button className="logout" onClick={() => dispatch(logoutUser())}>
+          <button className="logout" onClick={() => dispatch(logoutUser(navigate))}>
             Logout
           </button>
         )}{" "}
