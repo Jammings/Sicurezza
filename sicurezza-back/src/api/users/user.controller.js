@@ -19,6 +19,7 @@ const loginPost = (req, res) => {
 
   const done = (error, user) => {
     if (error) return res.status(error.status || 500).json(error.message);
+    
 
     req.logIn(user, (error) => {
       if (error) return res.status(error.status || 500).json(error.message);
@@ -93,8 +94,8 @@ const putUser= async (req,res,next) =>{
       const id = req.params.id;
       const user= new User(req.body);
       user._id=id;
-      const updateUser = await User.findByIdAndUpdate(id, user);
-      return res.status(201).json(user);
+      const updateUser = await User.findByIdAndUpdate(id, user).populate('room');
+      return res.status(201).json(updateUser);
   }catch(error){
       return next(error);
   }
