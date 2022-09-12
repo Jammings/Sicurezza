@@ -46,6 +46,16 @@ const authReducer = (state = INITIAL_STATE, action) => {
     case actions.LOGOUT_ERROR: {
       return { ...state, isLoading: false, user: false, error: payload }
     }
+    case actions.UPDATE_START: {
+      return { ...state, isLoading: true, error: null }
+    }
+    case actions.UPDATE_OK: {
+      return { ...state, isLoading: false, user: payload, error: false }
+    }    
+    case actions.UPDATE_ERROR: {
+      return { ...state, isLoading: false, user: false, error: payload }
+    }
+    
     default: 
       return state;
   }
@@ -53,3 +63,4 @@ const authReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default authReducer;
+

@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Form from "./Form";
 
+
+
 function Spaces() {
+  const user = useSelector(state => state.auth.user);
+    
   return (
     <>
       <div>
-        <Form />
+        <Form/>
+        {user.room && user.room.map((room) => { return(<div>rooms</div>)})}
+        {console.log(user.room)}
       </div>
     </>
       
