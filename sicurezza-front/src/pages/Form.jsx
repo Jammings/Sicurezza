@@ -1,30 +1,26 @@
 import React from "react";
 import './Form.scss';
 // rfce -> Crear componentes
-import {useRef} from 'react';
+import { useForm } from 'react-hook-form';
 
-function Form() {
-    const inputRef = useRef(null);
-
-    function handleClick() {
-        // 👇️ update input value
-        inputRef.current.value = 'New value';
-        // 👇️ access input value
-        console.log(inputRef.current.value);
+const Form = () => {
+    const {register, handleSubmit } = useForm();
+    
+    const onSubmit = (data) => {
+        console.log(data)
     }
+
   return (
-    <div className='row'>
-        <div className='row-1'>
-            <h1>Creador</h1>
-            <input ref={inputRef} type="text" id="creater" name="creater" placeholder='Nombre del creador'/>
-        </div>
-        <div className='row-2'>
-            <h1>Espacio</h1>
-            <input ref={inputRef} type="text" id="space" name="space" placeholder='Nombre del espacio'/>
-        </div>
-        <button onClick={handleClick}>Add Space</button>
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+        <label>Name
+        <input type="text" {...register("name")} />
+        </label>
+        <label>Product
+        <select type="text" {...register("product")}></select>
+        </label>
+        <button>Enviar</button>
+    </form>
   )
 }
-// rfce -> Crear componentes
+
 export default Form
