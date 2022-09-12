@@ -91,8 +91,10 @@ export const logoutUser = (navigate) => async (dispatch) => {
 export const updateUser = (id, data) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_START });
+    console.log(data)
     const response = await axios.put(`http://localhost:4500/users/${id}`, data);
-    dispatch({ type: UPDATE_OK, payload: data });
+    console.log(response)
+    dispatch({ type: UPDATE_OK, payload: response.data });
   } catch (error) {
     dispatch({ type: UPDATE_ERROR, payload: error });
   }
