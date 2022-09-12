@@ -1,14 +1,14 @@
 import React from "react";
-import Footer from "../components/Footer";
+import Form from "./Form";
 
 function Spaces() {
   return (
     <>
-      <div>espacios</div>
       <div>
-        <Footer />
+        <Form />
       </div>
     </>
+      
   );
 }
 
