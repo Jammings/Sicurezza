@@ -6,14 +6,8 @@ import CallDevices from "./CallDevices";
 function Devices() {
   return (
     <>
-      <div className="d-all">
-        <div className="d-text">
-          
-            <CallDevices />
-          
-        </div>
-      </div>
       <div>
+        <CallDevices />
         <Footer />
       </div>
     </>
