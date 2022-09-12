@@ -41,6 +41,7 @@ const Start = () => {
         <div className="b-text">
           <div className="b-title">
             <h2> Bienvenido {user.name} 👋​ </h2>
+            {/* <h2>El nombre del producto es {product.name} </h2> */}
           </div>
           <div className="b-light-father">
             <div className="b-light">
