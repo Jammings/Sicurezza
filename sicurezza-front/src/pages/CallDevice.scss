@@ -5,10 +5,15 @@
     justify-items: center;
     justify-content: space-between;
     margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 90px;
     flex-wrap: wrap;
     overflow-y: scroll;
     border-radius: 30px;
-    height: 1200px;
+    height: 800px;
+}
+.cd-devices-father::-webkit-scrollbar{
+    width: 0;
 }
 
 .cd-devices{
@@ -16,10 +21,16 @@
     align-items: center;
     justify-items: center;
     flex-direction: column;
-    height: 300px;
+    height: 250px;
     width: 30%;
+    padding: 15px 0;
     img{
         width: 50%;
         height: 50%;
+    }
+    h4{
+        margin: 0;
+        padding: 0;
+        border: 0;
     }
 }
