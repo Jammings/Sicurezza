@@ -1,0 +1,16 @@
+.cd-devices-father{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.cd-devices{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    img{
+        width: 100px;
+        height: 250px;
+    }
+}
