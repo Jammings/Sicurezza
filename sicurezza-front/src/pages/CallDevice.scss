@@ -1,18 +1,25 @@
 .cd-devices-father{
+    background-color: white;
     display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    margin-left: 100px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    border-radius: 30px;
+    height: 1600px;
 }
 
 .cd-devices{
-    // display: flex;
-    // flex-wrap: wrap;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    height: 300px;
     width: 30%;
-    padding-right: 10%;
-    padding-bottom: 50px;
     img{
         width: 50%;
         height: 50%;
     }
-    
 }

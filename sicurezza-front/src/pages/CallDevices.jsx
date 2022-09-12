@@ -18,7 +18,7 @@ const CallDevices = () => {
         {devices.map((device) => (
           <div className="cd-devices">
             <h3> {device.name} </h3>
-            <img src={device.img}/>
+            <img src={device.img} alt="device"/>
             <h4>{device.description}</h4>
             <h4>{device.type}</h4>
           </div>
