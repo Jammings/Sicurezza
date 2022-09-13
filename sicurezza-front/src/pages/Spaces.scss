@@ -16,9 +16,10 @@
 }
 
 .room-form{
-  display: flex;
-  justify-items: center;
-  flex-direction:row;
-  margin-top: 150px;
-
+float: right;
+width: 50%;
+margin-left: 1%;
+display: block;
+height: 260px;
+border: 10px, black;
 }

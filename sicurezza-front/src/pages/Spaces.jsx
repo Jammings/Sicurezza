@@ -16,12 +16,12 @@ function Spaces() {
   }, []);
   return (
     <>
-      <div className="room-form">
+      <div>
         <Form />
         {user && user.room && user.room.length > 0 &&
           user.room.map((room) => {
             return (
-              <div className="products-room">
+              <div className="room-form">
                 {room && room.name}
                 {room.product && room.product.length > 0 && room.product.map((product) => (
                   <img width="150px" src={product.img} alt=""></img>
