@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-.cd-device-father{
-=======
 .father{
->>>>>>> a81ddff033389ac0fb2a86672e17401961fd5639
     background-color: white;
     display: flex;
     align-items: center;
@@ -16,19 +12,12 @@
     border-radius: 30px;
     height: 800px;
 }
-<<<<<<< HEAD
-.cd-device-father::-webkit-scrollbar{
-    width: 0;
-}
 
-.cd-device{
-=======
 .father::-webkit-scrollbar{
     width: 0;
 }
 
 .devices{
->>>>>>> a81ddff033389ac0fb2a86672e17401961fd5639
     display: flex;
     align-items: center;
     justify-items: center;
