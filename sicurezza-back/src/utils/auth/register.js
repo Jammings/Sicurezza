@@ -40,7 +40,9 @@ const registerStrategy = new LocalStrategy(
       }
 
       if (!isValidPassword(password)) {
-        const error = new Error("La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número");
+        const error = new Error(
+          "La contraseña no cumple las reglas. 8 carácteres, 1 mayúscula y 1 número"
+        );
         return done(error, null);
       }
 
@@ -57,7 +59,6 @@ const registerStrategy = new LocalStrategy(
       userDB.password = "Jaque Mate maligno, no transferimos contraseñass";
 
       return done(null, userDB);
-
     } catch (error) {
       return done(error.message);
     }
