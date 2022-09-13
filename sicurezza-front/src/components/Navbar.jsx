@@ -16,7 +16,6 @@ import icmessage from "../assets/message.svg";
 import whitemessage from "../assets/IconsWhite/messageWhite.svg";
 import Footer from "./Footer";
 
-
 const INITIAL_STATE = {
   email: "",
   password: "",
@@ -100,8 +99,7 @@ const Navbar = () => {
         )}{" "}
         {/*si existe usuario muestra el botton de logout*/}
         {user && <h3>Bienvenido {user.name}</h3>}
-        <Footer/>
-        
+        <Footer />
       </div>
     )
   );

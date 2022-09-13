@@ -33,7 +33,11 @@ const Form = ({ rooms, setRooms }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           <p className="imput-form-text"> Name: </p>
-          <input className="form-input-room" type="text" {...register("name")} />
+          <input
+            className="form-input-room"
+            type="text"
+            {...register("name")}
+          />
         </label>
         <label>
           <p className="imput-form-text"> Product: </p>
