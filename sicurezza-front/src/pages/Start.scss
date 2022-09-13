@@ -53,33 +53,18 @@
 }
 
 .b-img {
-  padding-top: 30px;
+  padding-top: 5%;
   margin-left: 10px;
 }
-
 .b-connect {
-  width: 150px;
-  padding-top: 30px;
-  align-items: left;
-  justify-content: left;
-  justify-items: left;
+  width: 40%;
+  align-items: center;
+  img {
+    margin-top: -10px;
+  }
 }
-.b-connect-img {
-  width: 100px;
-  
-  padding-top: 50px;
-  
-}
-
 .b-spaces {
-  padding-top: 30px;
   text-align: center;
-  line-height: 1;
-}
-.b-otherdevices {
-  padding-top: 30px;
-  text-align: center;
-  line-height: 1;
 }
 .fake-footer {
   margin-top: 10px;

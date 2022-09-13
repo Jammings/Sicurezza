@@ -4,14 +4,14 @@
   font-style: normal;
   font-weight: normal;
 }
-.intro{
+.intro {
   display: flex;
   align-items: center;
   justify-items: center;
   flex-direction: column;
   height: 300px;
 }
-.imput-up-text{
+.imput-up-text {
   height: 10px;
   font-style: normal;
   font-weight: 300;
@@ -60,11 +60,11 @@
   line-height: 100%;
   text-align: center;
   letter-spacing: -0.0211em;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.logo-footer{
-  img{
+.logo-footer {
+  img {
     width: 99vw;
     margin: 0;
     padding: 35px 0 0 0;
