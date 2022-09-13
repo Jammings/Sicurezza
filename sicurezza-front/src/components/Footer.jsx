@@ -1,12 +1,12 @@
-import './Footer.scss';
-
+import "./Footer.scss";
+import imgfooter from "../assets/blueFootPc-01.svg";
 
 const Footer = () => {
   return (
     <div className="footer">
-      Footer en mi web
+      <img className="activeicons" src={imgfooter} alt="footer" />
     </div>
-  )
+  );
 };
 
 export default Footer;

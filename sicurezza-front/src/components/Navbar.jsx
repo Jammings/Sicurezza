@@ -14,6 +14,8 @@ import icspaces from "../assets/spaces.svg";
 import whitespaces from "../assets/IconsWhite/spacesWhite.svg";
 import icmessage from "../assets/message.svg";
 import whitemessage from "../assets/IconsWhite/messageWhite.svg";
+import Footer from "./Footer";
+
 
 const INITIAL_STATE = {
   email: "",
@@ -24,11 +26,11 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
-/*   const { error, isLoading } = useSelector((state) => state.navbar); */
+  /*   const { error, isLoading } = useSelector((state) => state.navbar); */
   const location = useLocation();
   const [users] = useState(INITIAL_STATE);
   console.log("pathname", location.pathname);
-  
+
   return (
     users && (
       <div className="navbar">
@@ -89,12 +91,17 @@ const Navbar = () => {
           </Link>
         )}
         {user && (
-          <button className="logout" onClick={() => dispatch(logoutUser(navigate))}>
+          <button
+            className="logout"
+            onClick={() => dispatch(logoutUser(navigate))}
+          >
             Logout
           </button>
         )}{" "}
         {/*si existe usuario muestra el botton de logout*/}
         {user && <h3>Bienvenido {user.name}</h3>}
+        <Footer/>
+        
       </div>
     )
   );
