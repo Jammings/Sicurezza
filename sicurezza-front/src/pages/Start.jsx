@@ -55,8 +55,8 @@ const Start = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Footer />
+      <div className="fake-footer">
+       
       </div>
     </>
   );
