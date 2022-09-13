@@ -14,9 +14,9 @@ const CallDevices = () => {
 
   return (
     <>
-      <div className="cd-devices-father">
+      <div className="cd-device-father">
         {devices.map((device) => (
-          <div className="cd-devices">
+          <div className="cd-device">
             <h3> {device.name} </h3>
             <img src={device.img} alt="device"/>
             <h4>{device.description}</h4>
