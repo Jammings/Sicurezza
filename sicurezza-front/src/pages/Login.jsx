@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
-import "./Login.scss";
 import { Link } from "react-router-dom";
-import "./Login.scss"
 import secuLogo from "../assets/sicurezza-logo.png";
-import signUp from "../assets/blueFootPc-01.svg";
+import signUp from "../assets/blueFootPc.svg";
+import "./Login.scss";
+
+
 
 const INITIAL_STATE = {
   email: "",
@@ -34,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <div className="intro">
+    <div>
       <h1 className="login-title">Bienvenido a</h1>
       <img src={secuLogo} width="350px" alt="sicurezza logo"/>
       {isLoading && <h2>Logeando usuario...</h2>}
@@ -65,20 +66,20 @@ const Login = () => {
             />
           </label>
           <div>
-            <button className="btn-access" type="submit">Acceder</button>
+          <button className="btn-access" type="submit">Acceder</button>
           </div>
         </form>
       )}          
       <div>
-        <Link to="/register">
-          <button className="btn-access">Register</button>
-        </Link>
+      <Link to="/register">
+      <button className="btn-access">Register</button>
+      </Link>
       </div>
       {error && <h2 className="error">{error}</h2>}{" "}
       {/*si hay error nos lo muestra*/}
-      <div className="logo-footer">
-        <img className="signUpImage" src={signUp} alt="city"/>
-      </div>
+      <div>
+   <img className="signUpImage" src={signUp} alt="city"/>
+   </div>
     </div>
   );
 };

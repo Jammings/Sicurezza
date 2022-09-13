@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Form from "./Form";
 import axios from "axios";
+import "./Spaces.scss"
 
 function Spaces() {
   const user = useSelector((state) => state.auth.user);
@@ -15,8 +16,7 @@ function Spaces() {
   }, []);
   return (
     <>
-      <div>
-        {console.log(user)}
+      <div className="room-form">
         <Form />
         {user && user.room && user.room.length > 0 &&
           user.room.map((room) => {
