@@ -25,7 +25,7 @@ const Start = () => {
   return (
     <>
       <div className="b-all">
-        <div className="b-bocadillo">
+        <div className="b-big-div">
           <div className="b-img">
             <img src={image1} alt="green users" />
           </div>
