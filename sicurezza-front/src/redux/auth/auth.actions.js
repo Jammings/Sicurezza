@@ -29,7 +29,7 @@ export const loginUser = (user, navigate) => async (dispatch) => {
     if (response && response._id) {
       // Hay usuario
       dispatch({ type: LOGIN_USER_OK, payload: response });
-      navigate("/");
+      navigate("/start");
     } else {
       // No hay usuario
       dispatch({ type: LOGIN_USER_ERROR, payload: response });
