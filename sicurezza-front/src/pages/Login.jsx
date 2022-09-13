@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
 import { Link } from "react-router-dom";
 import secuLogo from "../assets/sicurezza-logo.png";
-import signUp from "../assets/blueFootPc.svg";
+import signUp from "../assets/blueFootPc-01.svg";
 import "./Login.scss";
 
 const INITIAL_STATE = {
@@ -77,8 +77,8 @@ const Login = () => {
       </div>
       {error && <h2 className="error">{error}</h2>}{" "}
       {/*si hay error nos lo muestra*/}
-      <div>
-        <img className="signUpImage" src={signUp} alt="city" />
+      <div className="signUpImage">
+        <img  src={signUp} alt="city" />
       </div>
     </div>
   );
