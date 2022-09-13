@@ -43,7 +43,7 @@ const logoutPost = async (req, res) => {
 };
 
 const checkSessionGet = async (req, res, next) => {
-  if (req.user) { 
+  if (req.user) {
     const loggedUser = await User.findById(req.user._id).populate({
       path: "room",
       populate: {
