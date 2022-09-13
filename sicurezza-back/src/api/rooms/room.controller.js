@@ -13,7 +13,6 @@ const getRoom = async (req,res,next) =>{
     try{
         const {id} = req.params;//Forma de recoger la id con destructuring
         const room = await Room.findById(id).populate('products');//Como la linea 7 de ciema model
-        const img = await Room.findById(img).populate('products');//Como la linea 7 de ciema model
         if(room) return res.status(200).json(room);
         else return res.status(404).json('Room no encontrado');
     }catch(error){
