@@ -13,7 +13,7 @@
   justify-content: flex-start;
   align-items: stretch;
   font-family: Poppins;
-  background-color: #ffff;
+  background-color: white;//Antes white-----------------------------------
 
   .logo {
     width: 250px;
@@ -82,5 +82,12 @@
     width: 251.63px;
     height: 41.32px;
     margin-top: 5px;
+  }
+  #light{
+    background-color: white;
+  }
+  
+  #dark {
+    background-color: #0a0a0a;
   }
 }
