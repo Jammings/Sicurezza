@@ -16,7 +16,12 @@ const loginStrategy = new LocalStrategy(
       return done(error, null);
     }
 
-    const existingUser = await User.findOne({ email }).populate('room');
+    const existingUser = await User.findOne({ email }).populate({
+      path : 'room',
+      populate : {
+        path : 'product'
+      }
+    })
 
     if(!existingUser) {
       const error = new Error('El usuario no existe');

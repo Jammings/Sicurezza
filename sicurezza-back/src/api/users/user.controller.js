@@ -1,8 +1,7 @@
-const passport = require('passport');
-const User = require('./user.model');
+const passport = require("passport");
+const User = require("./user.model");
 
 const registerPost = (req, res) => {
-  
   const done = (error, user) => {
     if (error) return res.status(500).json(error.message);
 
@@ -10,49 +9,56 @@ const registerPost = (req, res) => {
       if (error) return res.status(error.status || 500).json(error.message);
       return res.status(201).json(user);
     });
-  }
-  
-  passport.authenticate('registrito', done)(req);
+  };
+
+  passport.authenticate("registrito", done)(req);
 };
 
 const loginPost = (req, res) => {
-
   const done = (error, user) => {
     if (error) return res.status(error.status || 500).json(error.message);
-    
+
     req.logIn(user, (error) => {
       if (error) return res.status(error.status || 500).json(error.message);
       return res.status(200).json(user);
     });
   };
 
-  passport.authenticate('logincito', done)(req);
+  passport.authenticate("logincito", done)(req);
 };
 
 const logoutPost = async (req, res) => {
-  if(req.user) {
+  if (req.user) {
     await req.logout(() => {
       req.session.destroy(() => {
         res.clearCookie("connect.sid");
-        return res.status(200).json('Hasta pronto! Te has deslogueado correctamente');
+        return res
+          .status(200)
+          .json("Hasta pronto! Te has deslogueado correctamente");
       });
     });
   } else {
-    return res.status(404).json('No hay usuario autenticado');
+    return res.status(404).json("No hay usuario autenticado");
   }
 };
 
-const checkSessionGet = (req, res, next) => {
-  if(req.user) {
-    req.user.password = null;
-    return res.status(200).json(req.user);
+const checkSessionGet = async (req, res, next) => {
+  if (req.user) { 
+    const loggedUser = await User.findById(req.user._id).populate({
+      path: "room",
+      populate: {
+        path: "product",
+      },
+    });
+    loggedUser.password = null;
+    return res.status(200).json(loggedUser);
   } else {
     return res.status(200).json();
   }
-}
+};
 
 const test = (req, res) => {
-  console.log('Usuario autenticado', req.user);
+  console.log("Usuario autenticado", req.user);
   return res.status(200).json(req.user);
 };
 
@@ -87,18 +93,23 @@ const test = (req, res) => {
 //   }
 // }
 
-const putUser= async (req,res,next) =>{
-  try{
-      const id = req.params.id;
-      const user= new User(req.body);
-      user._id=id;
-      const updateUser = await User.findByIdAndUpdate(id, user);
-      const newUpdateUser = await User.findById(id).populate('room');
-      return res.status(201).json(newUpdateUser);
-  }catch(error){
-      return next(error);
+const putUser = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const user = new User(req.body);
+    user._id = id;
+    const updateUser = await User.findByIdAndUpdate(id, user);
+    const newUpdateUser = await User.findById(id).populate({
+      path: "room",
+      populate: {
+        path: "product",
+      },
+    });
+    return res.status(201).json(newUpdateUser);
+  } catch (error) {
+    return next(error);
   }
-}
+};
 
 // const deleteUser = async(req,res,next) => {
 //   try{
@@ -110,12 +121,11 @@ const putUser= async (req,res,next) =>{
 //   }
 // }
 
-
 module.exports = {
   registerPost,
   loginPost,
   logoutPost,
   test,
   checkSessionGet,
-  putUser
-}
+  putUser,
+};

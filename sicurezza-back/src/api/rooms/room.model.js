@@ -6,6 +6,7 @@ const roomSchema = new Schema(
   {
     name: { type: String, required: true },
     product: [{type:Schema.Types.ObjectId, ref: 'Product'}]
+    
   },
   {
     timestamps: true,
