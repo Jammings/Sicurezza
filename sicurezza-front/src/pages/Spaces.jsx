@@ -39,9 +39,9 @@ function Spaces() {
                     ></img>
                   ))}
                 <div className="room-form__btn-group">
-                  <button className="form__btn" onClick={() => navigate(`/spaces/edit/${room._id}`)}>
+                  {/* <button className="form__btn" onClick={() => navigate(`/spaces/edit/${room._id}`)}>
                     Editar
-                  </button>
+                  </button> */}
                   <button className="form__btn" onClick={() => deleteProduct(room._id)}>
                     Eliminar
                   </button>
