@@ -14,18 +14,18 @@ const INITIAL_STATE = {
 const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {error} = useSelector(state => state.auth);
+  const { error } = useSelector((state) => state.auth);
   const [form, setForm] = useState(INITIAL_STATE);
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(registerUser(form, navigate))
+    dispatch(registerUser(form, navigate));
   };
 
   const changeInput = (ev) => {
     const { name, value } = ev.target;
 
-    if(value) ev.target.setCustomValidity('');
+    if (value) ev.target.setCustomValidity("");
 
     setForm({
       ...form,
@@ -34,8 +34,8 @@ const Register = () => {
   };
 
   const setCustomMessage = (ev) => {
-    ev.target.setCustomValidity('Debes completar este campo, no seas tramposo');
-  }
+    ev.target.setCustomValidity("Debes completar este campo, no seas tramposo");
+  };
 
   return (
     <div>
@@ -43,15 +43,31 @@ const Register = () => {
       <form onSubmit={submit}>
         <label>
           <p className="imput-up-text">Nombre</p>
-          <input className="form-input" type="text" name="name" value={form.name} onChange={changeInput} onInvalid={(ev) => setCustomMessage(ev)} required/>
+          <input
+            className="form-input"
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={changeInput}
+            onInvalid={(ev) => setCustomMessage(ev)}
+            required
+          />
         </label>
         <label>
           <p className="imput-up-text">Email</p>
-          <input className="form-input" type="email" name="email" value={form.email} onChange={changeInput} required />
+          <input
+            className="form-input"
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={changeInput}
+            required
+          />
         </label>
         <label>
           <p className="imput-up-text">Password</p>
-          <input className="form-input"
+          <input
+            className="form-input"
             type="password"
             name="password"
             value={form.password}
@@ -63,15 +79,17 @@ const Register = () => {
         </label>
         {/* <Navigate to="/eeeeeeh" /> */}
         <div>
-        <button className="btn-access" type="submit">Registrarme</button>
+          <button className="btn-access" type="submit">
+            Registrarme
+          </button>
         </div>
       </form>
-      {error && <h2 className="error">{error}</h2>}     {/*si hay error nos lo muestra*/}
-    <div>
-   <img className="signUpImage" src={signUp} alt="city"/>
-   </div>
-    </div> 
+      {error && <h2 className="error">{error}</h2>}{" "}
+      {/*si hay error nos lo muestra*/}
+      <div>
+        <img className="signUpImage" src={signUp} alt="city" />
+      </div>
+    </div>
   );
-  
 };
 export default Register;

@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import image1 from "../assets/greenUsers.svg";
 import image from "../assets/checkUsers.svg";
 import image2 from "../assets/bigSpaces.svg";
@@ -9,31 +11,47 @@ import Footer from "../components/Footer";
 import "./Start.scss";
 
 const Start = () => {
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4500/rooms")
+      .then((response) => setRooms(response.data))
+      .catch((error) => console.error(error));
+  }, []);
+
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   return (
     <>
       <div className="b-all">
-        <div className="b-bocadillo">
+        <div className="b-big-div">
           <div className="b-img">
             <img src={image1} alt="green users" />
           </div>
           <div className="b-otherdevices">
             <h2> Otros Dispositivos </h2>
-            <h3> 5</h3>
+            <h3> {user?.room.length}</h3>
             {/* <h2> {user.dispositivos} </h2>  */}
-            {/* ESTO ESTÁ MAL, LO DEJO ASÍ PARA CAMBIARLO CUANDO ESTÉ EL BACK */}
+            {/* ESTO ESTÁ MAL, SEGURAMENTE LO DEJO ASÍ PARA CAMBIARLO CUANDO ESTÉ EL BACK */}
           </div>
-          <div className="b-connect">
-            <h2> Conectado </h2>
-            <img src={image} alt="check users" />
-          </div>
+          
+            <div className="b-img">
+              <img src={image} alt="check users" />
+            </div>
+
+            <div className="b-connect">
+              <h2> Conectado </h2>
+            </div>
+          
+
           <div className="b-img">
             <img src={image2} alt="spaces" />
           </div>
           <div className="b-spaces">
             <h2> Espacio </h2>
-            <h3> Salón</h3>
+            <h3> Jardín </h3>
+            {/* console.log ({user.room}) */}
             {/* <h2> {user.dispositivos} </h2>  */}
             {/* ESTO ESTÁ MAL, LO DEJO ASÍ PARA CAMBIARLO CUANDO ESTÉ EL BACK */}
           </div>
@@ -55,9 +73,7 @@ const Start = () => {
           </div>
         </div>
       </div>
-      <div className="fake-footer">
-       
-      </div>
+      <div className="fake-footer"></div>
     </>
   );
 };

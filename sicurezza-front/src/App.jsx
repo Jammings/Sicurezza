@@ -22,12 +22,12 @@ import ReactSwitch from "react-switch";
 export const ThemeContext = createContext(null); 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
-  const user = useSelector(state => state.auth.user);
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
     //Intentar recuperar el usuario, si es que estamos logueados
-    dispatch(checkUser(navigate))
+    dispatch(checkUser(navigate));
   }, [dispatch]);
   const [theme, setTheme] = useState("dark");
   const toggleTheme = () => {

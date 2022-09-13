@@ -1,7 +1,8 @@
 .b-all {
   padding-left: 100px;
+  padding-top: 40px;
 }
-.b-bocadillo {
+.b-big-div {
   background-color: white;
   width: 90%;
   justify-content: center;
@@ -9,6 +10,7 @@
   margin-bottom: 75px;
   display: flex;
   flex-wrap: wrap-reverse;
+  gap:50px;
   img {
     line-height: 1;
   }
@@ -52,21 +54,34 @@
 }
 
 .b-img {
-  padding-top: 5%;
+  padding-top: 30px;
   margin-left: 10px;
 }
-.b-connect{
-  width: 40%;
-  align-items: center;
-  img{
-    margin-top: -10px;
-  }
+
+.b-connect {
+  width: 150px;
+  padding-top: 30px;
+  align-items: left;
+  justify-content: left;
+  justify-items: left;
 }
-.b-spaces{
-text-align: center;
+.b-connect-img {
+  width: 100px;
+  
+  padding-top: 50px;
+  
 }
 
-.fake-footer{
+.b-spaces {
+  padding-top: 30px;
+  text-align: center;
+  line-height: 1;
+}
+.b-otherdevices {
+  padding-top: 30px;
+  text-align: center;
+  line-height: 1;
+}
+.fake-footer {
   margin-top: 10px;
-
 }
