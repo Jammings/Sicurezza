@@ -33,7 +33,7 @@ const Start = () => {
             <h2> Otros Dispositivos </h2>
             <h3> {user?.room.length}</h3>
             {/* <h2> {user.dispositivos} </h2>  */}
-            {/* ESTO ESTÁ MAL, LO DEJO ASÍ PARA CAMBIARLO CUANDO ESTÉ EL BACK */}
+            {/* ESTO ESTÁ MAL, SEGURAMENTE LO DEJO ASÍ PARA CAMBIARLO CUANDO ESTÉ EL BACK */}
           </div>
           
             <div className="b-img">
