@@ -1,7 +1,7 @@
 import axios from 'axios';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
-const BASE_URL = 'http://localhost:4500'; // url del backend
+export const BASE_URL = 'http://localhost:4500'; // url del backend
 
 //trata de registrar el usuario en nuestra API y devuelve la respuesta de la API
 export const register = async (user) => {

@@ -21,6 +21,8 @@ export const UPDATE_START = "UPDATE_START";
 export const UPDATE_OK = "UPDATE_OK";
 export const UPDATE_ERROR = "UPDATE_ERROR";
 
+export const DELETE_ROOM = "DELETE_ROOM"
+
 export const loginUser = (user, navigate) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_USER_START });
@@ -98,5 +100,11 @@ export const updateUser = (id, data) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: UPDATE_ERROR, payload: error });
   }
-  
+};
+
+export const deleteRoom = (id) => async (dispatch) => {
+  dispatch({
+    type: DELETE_ROOM,
+    payload: id,
+  })
 };

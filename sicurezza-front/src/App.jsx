@@ -17,6 +17,7 @@ import Start from "./pages/Start";
 import Devices from "./pages/Devices";
 import Settings from "./pages/Settings";
 import Spaces from "./pages/Spaces";
+import EditRoom from "./pages/EditRoom";
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
@@ -48,6 +49,7 @@ function App() {
           <Route path="/devices" element={<Devices />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/spaces" element={<Spaces />} />
+          <Route path="/spaces/edit/:id" element={<EditRoom />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
