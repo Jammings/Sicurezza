@@ -1,4 +1,4 @@
-.cd-devices-father{
+.father{
     background-color: white;
     display: flex;
     align-items: center;
@@ -12,11 +12,11 @@
     border-radius: 30px;
     height: 800px;
 }
-.cd-devices-father::-webkit-scrollbar{
+.father::-webkit-scrollbar{
     width: 0;
 }
 
-.cd-devices{
+.devices{
     display: flex;
     align-items: center;
     justify-items: center;
