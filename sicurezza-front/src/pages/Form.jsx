@@ -30,21 +30,25 @@ const Form = ({rooms, setRooms}) => {
   }, []);
 
   return (
+    <div className="intro">
     <form onSubmit={handleSubmit(onSubmit)}>
       <label>
-        Name
-        <input type="text" {...register("name")} />
+      <p className="imput-form-text">  Name: </p>
+      <input className="form-input-room" type="text" {...register("name")} />
       </label>
       <label>
-        Product
-        {devices && <select
+      <p className="imput-form-text"> Product: </p>
+      {devices && <select className="form-input"
           type="text"
           {...register("product")}
         > <option></option> 
           {devices.map((device) => (<option value={device._id}>{device.name}</option>))}</select>
          } </label>
-      <button>Enviar</button>
+      <div>
+      <button className="btn-product">Enviar</button>
+      </div>
     </form>
+    </div>
   );
 };
 
