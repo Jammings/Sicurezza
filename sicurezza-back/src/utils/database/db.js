@@ -1,5 +1,5 @@
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 dotenv.config();
 
 const DB_URL = process.env.DB_URL;
@@ -11,10 +11,12 @@ const connect = async () => {
       useUnifiedTopology: true,
     });
     const { name, host } = db.connection;
-    console.log(`Conectado con éxito a la base de datos ${name} en host: ${host}`);
+    console.log(
+      `Conectado con éxito a la base de datos ${name} en host: ${host}`
+    );
   } catch (error) {
-    console.log('Error conectando a la base de datos', error);
+    console.log("Error conectando a la base de datos", error);
   }
-}
+};
 
 module.exports = { connect, DB_URL };

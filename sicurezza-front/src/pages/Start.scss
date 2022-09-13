@@ -9,6 +9,7 @@
   margin-bottom: 75px;
   display: flex;
   flex-wrap: wrap-reverse;
+  gap:50px;
   img {
     line-height: 1;
   }
@@ -65,7 +66,6 @@
 .b-spaces {
   text-align: center;
 }
-
 .fake-footer {
   margin-top: 10px;
 }
