@@ -21,14 +21,13 @@ import EditRoom from "./pages/EditRoom";
 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
-  const user = useSelector(state => state.auth.user);
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
     //Intentar recuperar el usuario, si es que estamos logueados
-    dispatch(checkUser(navigate))
-     
-    }, [dispatch]);
+    dispatch(checkUser(navigate));
+  }, [dispatch]);
 
   return (
     <div className="app">

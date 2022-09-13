@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
-import "./Settings.scss"
+import "./Settings.scss";
 
 function Settings() {
   return (

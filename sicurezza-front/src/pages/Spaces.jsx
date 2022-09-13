@@ -10,21 +10,14 @@ import { deleteRoom } from "../redux/auth/auth.actions";
 function Spaces() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
-  const user = useSelector((state) => state.auth.user);
-  // const [devices, setDevices] = useState([]);
 
-  // useEffect(() => {
-    // axios
-    //   .get(`${BASE_URL}/products`)
-    //   .then((response) => setDevices(response.data))
-    //   .catch((error) => console.error(error));
-  // }, []);
+  const user = useSelector((state) => state.auth.user);
 
   const deleteProduct = (id) => {
-    axios.delete(`${BASE_URL}/rooms/${id}`)
-    .then(() => dispatch(deleteRoom(id)))
-  }
+    axios
+      .delete(`${BASE_URL}/rooms/${id}`)
+      .then(() => dispatch(deleteRoom(id)));
+  };
 
   return (
     <div className="spaces">
@@ -38,11 +31,21 @@ function Spaces() {
               <div key={room._id} className="room-form">
                 <h3>{room?.name}</h3>
                 {room?.product?.length > 0 &&
-                  room.product.map((product) => <img key={product._id} src={product.img} alt="product"></img>)}
-                  <div className="room-form__btn-group">
-                    <button onClick={() => navigate(`/spaces/edit/${room._id}`)}>Editar</button>
-                    <button onClick={() => deleteProduct(room._id)}>Eliminar</button>
-                  </div>
+                  room.product.map((product) => (
+                    <img
+                      key={product._id}
+                      src={product.img}
+                      alt="product"
+                    ></img>
+                  ))}
+                <div className="room-form__btn-group">
+                  <button className="form__btn" onClick={() => navigate(`/spaces/edit/${room._id}`)}>
+                    Editar
+                  </button>
+                  <button className="form__btn" onClick={() => deleteProduct(room._id)}>
+                    Eliminar
+                  </button>
+                </div>
               </div>
             );
           })}

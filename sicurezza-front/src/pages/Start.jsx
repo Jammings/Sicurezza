@@ -55,9 +55,7 @@ const Start = () => {
           </div>
         </div>
       </div>
-      <div className="fake-footer">
-       
-      </div>
+      <div className="fake-footer"></div>
     </>
   );
 };
