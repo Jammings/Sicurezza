@@ -16,7 +16,6 @@ import icmessage from "../assets/message.svg";
 import whitemessage from "../assets/IconsWhite/messageWhite.svg";
 import Footer from "./Footer";
 
-
 const INITIAL_STATE = {
   email: "",
   password: "",
@@ -68,7 +67,7 @@ const Navbar = () => {
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}
-        {user && (
+        {/* {user && (
           <Link
             className={location.pathname === "/settings" ? "active" : ""}
             to="/settings"
@@ -78,7 +77,7 @@ const Navbar = () => {
             <span>Ajustes</span>
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
-        )}
+        )} */}
         {user && (
           <Link
             className={location.pathname === "/my-account" ? "active" : ""}
@@ -100,8 +99,7 @@ const Navbar = () => {
         )}{" "}
         {/*si existe usuario muestra el botton de logout*/}
         {user && <h3>Bienvenido {user.name}</h3>}
-        <Footer/>
-        
+        <Footer />
       </div>
     )
   );
