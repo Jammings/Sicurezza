@@ -5,7 +5,7 @@ import "./Settings.scss"
 function Settings() {
   return (
     <>
-      <div className="s-div">Settings</div>
+      {/* <div className="s-div">Settings</div> */}
       <div>
         <Footer />
       </div>

@@ -1,36 +1,53 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Form from "./Form";
 import axios from "axios";
-import "./Spaces.scss"
+import { BASE_URL } from "../api/auth.api";
+import "./Spaces.scss";
+import { deleteRoom } from "../redux/auth/auth.actions";
 
 function Spaces() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
   const user = useSelector((state) => state.auth.user);
-  const [devices, setDevices] = useState([]);
+  // const [devices, setDevices] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:4500/products")
-      .then((response) => setDevices(response.data))
-      .catch((error) => console.error(error));
-  }, []);
+  // useEffect(() => {
+    // axios
+    //   .get(`${BASE_URL}/products`)
+    //   .then((response) => setDevices(response.data))
+    //   .catch((error) => console.error(error));
+  // }, []);
+
+  const deleteProduct = (id) => {
+    axios.delete(`${BASE_URL}/rooms/${id}`)
+    .then(() => dispatch(deleteRoom(id)))
+  }
+
   return (
-    <>
-      <div className="room-form">
-        <Form />
-        {user && user.room && user.room.length > 0 &&
+    <div className="spaces">
+      <Form />
+      <div className="rooms">
+        {user &&
+          user.room &&
+          user.room.length > 0 &&
           user.room.map((room) => {
             return (
-              <div className="products-room">
-                {room && room.name}
-                {room.product && room.product.length > 0 && room.product.map((product) => (
-                  <img width="150px" src={product.img} alt=""></img>
-                ))}
+              <div key={room._id} className="room-form">
+                <h3>{room?.name}</h3>
+                {room?.product?.length > 0 &&
+                  room.product.map((product) => <img key={product._id} src={product.img} alt="product"></img>)}
+                  <div className="room-form__btn-group">
+                    <button onClick={() => navigate(`/spaces/edit/${room._id}`)}>Editar</button>
+                    <button onClick={() => deleteProduct(room._id)}>Eliminar</button>
+                  </div>
               </div>
             );
           })}
       </div>
-    </>
+    </div>
   );
 }
 

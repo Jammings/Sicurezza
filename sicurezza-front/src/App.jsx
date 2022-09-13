@@ -17,9 +17,9 @@ import Start from "./pages/Start";
 import Devices from "./pages/Devices";
 import Settings from "./pages/Settings";
 import Spaces from "./pages/Spaces";
-
-export const ThemeContext = createContext(null)
-
+import EditRoom from "./pages/EditRoom";
+import ReactSwitch from "react-switch";
+export const ThemeContext = createContext(null); 
 function App() {
   // const [showScroll, setShowScroll] = useState(false);
   const user = useSelector(state => state.auth.user);
@@ -28,42 +28,41 @@ function App() {
   useEffect(() => {
     //Intentar recuperar el usuario, si es que estamos logueados
     dispatch(checkUser(navigate))
-     
-    }, [dispatch]);
-  
-  const [theme, setTheme] = useState("dark")
-
+  }, [dispatch]);
+  const [theme, setTheme] = useState("dark");
   const toggleTheme = () => {
-    setTheme((current) => (current === "light" ? "dark" : "light"))
+    setTheme((current)=>(current==="light" ? "dark" : "light")) 
   }
-
   return (
     <ThemeContext.Provider value = {{theme, toggleTheme}}>
-
-    <div className="app" id = {theme}>
-      {/*Envía al navbar la función logoutUser que es la que desloguea el usuario, y también el usuario*/}
-      {user && <Navbar />}
-      <main className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/*Envía al componente login la función loginUser, que es la que trata de loguear el usuario con la API, y también el error*/}
-          <Route path="/login" element={<Login />} />
-          {/*Envía al componente regiter la función registerUser, que es la que trata de registrar el usuario con la API, y también el error*/}
-          <Route path="/register" element={<Register />} />
-          <Route
-            path="/my-account"
-            element={<AuthRoute component={<MyAccount />} />}
-          />
-          <Route path="/start" element={<Start />} />
-          <Route path="/devices" element={<Devices />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/spaces" element={<Spaces />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      {/* <button onClick={() => setShowScroll(!showScroll)}>Mostrar Scroll</button>
-      {showScroll && <Scroll />} */}
-    </div>
+      <div className="app" id={theme}>
+        {/*Envía al navbar la función logoutUser que es la que desloguea el usuario, y también el usuario*/}
+        {user && <Navbar />}
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/*Envía al componente login la función loginUser, que es la que trata de loguear el usuario con la API, y también el error*/}
+            <Route path="/login" element={<Login />} />
+            {/*Envía al componente regiter la función registerUser, que es la que trata de registrar el usuario con la API, y también el error*/}
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/my-account"
+              element={<AuthRoute component={<MyAccount />} />}
+            />
+            <Route path="/start" element={<Start />} />
+            <Route path="/devices" element={<Devices />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/spaces" element={<Spaces />} />
+            <Route path="/spaces/edit/:id" element={<EditRoom />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        {/* <button onClick={() => setShowScroll(!showScroll)}>Mostrar Scroll</button>
+        {showScroll && <Scroll />} */}
+        <div className="switch">
+          <ReactSwitch onChange={toggleTheme} checked={theme==="dark"}/>
+        </div>
+      </div>
     </ThemeContext.Provider>
   );
 }
