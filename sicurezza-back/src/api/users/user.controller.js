@@ -20,7 +20,6 @@ const loginPost = (req, res) => {
   const done = (error, user) => {
     if (error) return res.status(error.status || 500).json(error.message);
     
-
     req.logIn(user, (error) => {
       if (error) return res.status(error.status || 500).json(error.message);
       return res.status(200).json(user);
@@ -56,7 +55,6 @@ const test = (req, res) => {
   console.log('Usuario autenticado', req.user);
   return res.status(200).json(req.user);
 };
-
 
 // CRUD DE HABITACIONES APARTIR DE AQUÍ
 // const getAllUsers = async (req, res, next) => {
@@ -94,8 +92,9 @@ const putUser= async (req,res,next) =>{
       const id = req.params.id;
       const user= new User(req.body);
       user._id=id;
-      const updateUser = await User.findByIdAndUpdate(id, user).populate('room');
-      return res.status(201).json(updateUser);
+      const updateUser = await User.findByIdAndUpdate(id, user);
+      const newUpdateUser = await User.findById(id).populate('room');
+      return res.status(201).json(newUpdateUser);
   }catch(error){
       return next(error);
   }
