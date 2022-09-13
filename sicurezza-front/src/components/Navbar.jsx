@@ -67,7 +67,7 @@ const Navbar = () => {
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
         )}
-        {user && (
+        {/* {user && (
           <Link
             className={location.pathname === "/settings" ? "active" : ""}
             to="/settings"
@@ -77,7 +77,7 @@ const Navbar = () => {
             <span>Ajustes</span>
             <img className="activeicons" src={arrow} alt="fin" />
           </Link>
-        )}
+        )} */}
         {user && (
           <Link
             className={location.pathname === "/my-account" ? "active" : ""}
